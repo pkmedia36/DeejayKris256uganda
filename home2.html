@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DeejayKris256ug | Events • Media • Entertainment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+body{
+  font-family:'Poppins',sans-serif;
+  background:#0b0b0b;
+  color:#fff;
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar{
+  background:#000;
+  z-index:999;
+}
+.navbar .nav-link.active{
+  color:#ff3399 !important;
+  font-weight:600;
+}
+
+/* HERO */
+.hero{
+  min-height:90vh;
+  background:url('assets/images/hero2.jpg') center/cover no-repeat;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+}
+.hero h1{
+  font-size:3.5rem;
+  font-weight:700;
+  color:#ff3399;
+  text-shadow: 0 0 15px #ff3399, 0 0 30px #ff66cc;
+  animation: fadeInDown 1s ease-in-out;
+}
+.hero p{
+  font-size:1.3rem;
+  opacity:0.85;
+  margin-top:10px;
+  animation: fadeInUp 1s ease-in-out;
+}
+.hero .btn{
+  margin-top:20px;
+  padding:12px 40px;
+  font-size:1.2rem;
+  border-radius:50px;
+  background:#ff3399;
+  color:#fff;
+  font-weight:600;
+  transition:.4s;
+}
+.hero .btn:hover{
+  background:#ff66cc;
+  color:#000;
+  box-shadow:0 0 20px #ff3399, 0 0 40px #ff66cc;
+}
+
+/* CATEGORY CARDS */
+.category-card{
+  background:#151515;
+  border-radius:16px;
+  padding:30px;
+  text-align:center;
+  transition:.4s;
+  height:100%;
+  cursor:pointer;
+}
+.category-card i{
+  font-size:40px;
+  color:#ff3399;
+  margin-bottom:15px;
+  transition:.4s;
+}
+.category-card h5{
+  margin-bottom:10px;
+}
+.category-card:hover{
+  transform:translateY(-10px) scale(1.02);
+  background:#1f1f1f;
+}
+.category-card:hover i{
+  color:#ff66cc;
+  transform:rotate(10deg);
+}
+
+/* EVENTS */
+.event-card{
+  background:#151515;
+  border-radius:16px;
+  overflow:hidden;
+  transition:.4s;
+  cursor:pointer;
+}
+.event-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+.event-card:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 10px 30px rgba(255,51,153,0.4);
+}
+.event-card h6{
+  color:#ff3399;
+  margin-bottom:5px;
+}
+
+/* VIDEO SECTION */
+.video-section{
+  background:linear-gradient(135deg,#000,#111);
+  padding:80px 0;
+}
+.play-btn{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  background:#ff3399;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:32px;
+  color:#fff;
+  transition:.4s;
+}
+.play-btn:hover{
+  background:#ff66cc;
+  box-shadow:0 0 20px #ff3399, 0 0 40px #ff66cc;
+  transform:scale(1.1);
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  padding:25px;
+  text-align:center;
+  font-size:14px;
+  color:#888;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity:0; transform: translateY(-50px);}
+  to { opacity:1; transform: translateY(0);}
+}
+@keyframes fadeInUp {
+  from { opacity:0; transform: translateY(50px);}
+  to { opacity:1; transform: translateY(0);}
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero h1{ font-size:2.5rem;}
+  .hero p{ font-size:1rem;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">DeejayKris256ug</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="home2.html">Media</a></li>
+        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero d-flex align-items-center text-center">
+  <div class="container hero-content">
+    <h1>Music • Events • Entertainment</h1>
+    <p>Clubs, Weddings, TV Shows, Beach & Private Parties</p>
+    <a href="booking.html" class="btn btn-lg">Book Now</a>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="fw-bold">Entertainment Categories</h2>
+      <p class="opacity-75">Where DeejayKris256ug Performs</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="category-card">
+          <i class="fa-solid fa-martini-glass"></i>
+          <h5>Clubs & Bars</h5>
+          <p>High-energy nightlife experiences</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="category-card">
+          <i class="fa-solid fa-ring"></i>
+          <h5>Weddings</h5>
+          <p>Luxury & romantic celebrations</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="category-card">
+          <i class="fa-solid fa-tv"></i>
+          <h5>TV Channels</h5>
+          <p>Live shows & promotions</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="py-5 bg-dark">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="fw-bold">Recent Events</h2>
+      <p class="opacity-75">Captured moments from live performances</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="event-card">
+          <img src="assets/images/KRIS ALBUM ART.jpg.jpeg" alt="">
+          <div class="p-3">
+            <h6>Beach Party</h6>
+            <p class="small opacity-75">Music • Crowd • Energy</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="event-card">
+          <img src="assets/images/KRIS ALBUM ART.jpg.jpeg" alt="">
+          <div class="p-3">
+            <h6>Club Night</h6>
+            <p class="small opacity-75">Lights • Sound • Vibes</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="event-card">
+          <img src="assets/images/KRIS ALBUM ART.jpg.jpeg" alt="">
+          <div class="p-3">
+            <h6>Wedding Event</h6>
+            <p class="small opacity-75">Elegant • Premium</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section class="video-section text-center">
+  <div class="container" data-aos="fade-up">
+    <h2 class="fw-bold mb-3">Watch Live Performance</h2>
+    <p class="opacity-75 mb-4">Experience the vibe</p>
+    <a href="assets/videos/party-dance -back.mp4" class="play-btn">
+      <i class="fa-solid fa-play"></i>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 DeejayKris256ug. All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({ duration:1200, once:true });
+</script>
+</body>
+</html>

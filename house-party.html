@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>House Parties | DeejayKris256ug</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- AOS Animations -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+body {
+  font-family:'Poppins', sans-serif;
+  background:#0b0b0b;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* HERO */
+.page-hero{
+  background:url('assets/images/house-party-hero.jpg') center/cover no-repeat fixed;
+  padding:130px 0;
+  position:relative;
+  text-align:center;
+}
+.page-hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.75);
+}
+.page-hero-content{
+  position:relative;
+  z-index:2;
+}
+.page-hero h1{
+  font-size:3rem;
+  font-weight:700;
+  text-shadow:0 0 20px #0d6efd;
+}
+.page-hero p{
+  font-size:1.2rem;
+  opacity:.85;
+}
+
+/* SECTION TITLE */
+.section-title{
+  font-weight:700;
+  margin-bottom:35px;
+  text-align:center;
+  position:relative;
+}
+.section-title::after{
+  content:'';
+  width:60px;
+  height:3px;
+  background:#0d6efd;
+  display:block;
+  margin:10px auto 0;
+}
+
+/* HOUSE PARTY CARD */
+.house-card{
+  background:#141414;
+  border-radius:16px;
+  overflow:hidden;
+  transition:.4s;
+  box-shadow:0 0 10px rgba(13,110,253,0.3);
+}
+.house-card:hover{
+  transform:translateY(-8px) scale(1.02);
+  background:#1c1c1c;
+  box-shadow:0 0 20px rgba(13,110,253,0.7);
+}
+.house-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+.house-card-body{
+  padding:20px;
+}
+.house-card-body h5{
+  margin-bottom:8px;
+  font-weight:600;
+}
+.house-card-body p{
+  font-size:14px;
+  opacity:.8;
+}
+
+/* CTA */
+.cta{
+  background:#0d6efd;
+  padding:70px 20px;
+  text-align:center;
+}
+.cta h2{
+  font-weight:700;
+  text-shadow:0 0 15px #fff;
+}
+.cta .btn-light{
+  border-radius:50px;
+  padding:12px 40px;
+  font-weight:600;
+  box-shadow:0 0 15px #fff,0 0 30px #66b0ff;
+  transition:.4s;
+}
+.cta .btn-light:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 25px #fff,0 0 50px #66b0ff;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  padding:25px;
+  text-align:center;
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="page-hero" data-aos="fade-down">
+  <div class="container page-hero-content">
+    <h1 class="fw-bold display-5">House Parties</h1>
+    <p class="opacity-75">DJ Kris brings energy and music to your private house parties</p>
+  </div>
+</section>
+
+<!-- HOUSE PARTY GRID -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Featured House Parties</h2>
+    <div class="row g-4">
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="house-card">
+          <img src="assets/images/KRIS ALBUM ART.jpg.jpeg" alt="Luxury House Party">
+          <div class="house-card-body">
+            <h5>Luxury House Party</h5>
+            <p>Private high-end house party with DJ Kris performing live</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="house-card">
+          <img src="assets/images/KRIS ALBUM ART.jpg.jpeg" alt="Rooftop House Party">
+          <div class="house-card-body">
+            <h5>Rooftop House Party</h5>
+            <p>Exclusive rooftop party with vibrant DJ set</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="house-card">
+          <img src="assets/images/mix-photo.avif" alt="Garden House Party">
+          <div class="house-card-body">
+            <h5>Garden House Party</h5>
+            <p>Outdoor garden celebration with live DJ performance</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="house-card">
+          <img src="assets/images/hyper.avif" alt="Poolside House Party">
+          <div class="house-card-body">
+            <h5>Poolside House Party</h5>
+            <p>Fun poolside party with full DJ setup and lighting</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+        <div class="house-card">
+          <img src="assets/images/mix-photo.avif" alt="Birthday House Party">
+          <div class="house-card-body">
+            <h5>Birthday House Party</h5>
+            <p>DJ Kris makes birthdays at home unforgettable</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+        <div class="house-card">
+          <img src="assets/images/mix-photo-1.avif" alt="Themed House Party">
+          <div class="house-card-body">
+            <h5>Themed House Party</h5>
+            <p>Custom themed house parties with professional DJ services</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" data-aos="zoom-in">
+  <h2>Book DJ Kris for Your House Party</h2>
+  <p>Email: christopherkato05@gmail.com | Phone: +971 529605660</p>
+  <a href="booking.html" class="btn btn-light btn-lg mt-3">Book Now</a>
+</section>
+
+<footer class="text-center py-4 bg-black">
+  <p>© 2026 DeejayKris256ug. All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({ duration:1200, once:true });
+</script>
+</body>
+</html>

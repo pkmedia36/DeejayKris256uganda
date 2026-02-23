@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DeejayKris256ug | Online DJ Booking & Entertainment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">DeejayKris256ug</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="videos.html">Videos</a></li>
+        <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero d-flex align-items-center justify-content-center text-center">
+  <div class="overlay"></div>
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="assets/videos/party-dance -back.mp4" type="video/mp4">
+  </video>
+
+  <div class="container hero-content position-relative text-white">
+    <h1 class="hero-title mb-3" data-aos="fade-down" data-aos-duration="1200">
+      <!-- Split words into spans for individual animation -->
+      <span>Book</span> <span>DeejayKris256ug</span>
+    </h1>
+    <p class="hero-subtitle mb-4" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+      Clubs • Weddings • TV Shows • Beach Parties • Corporate Events
+    </p>
+    <a href="booking.html" class="btn btn-neon btn-lg position-relative" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="600">
+      Book Now
+      <span class="sparkle"></span>
+      <span class="sparkle"></span>
+      <span class="sparkle"></span>
+    </a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section py-5 bg-dark text-white">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-title neon-text" data-aos="fade-down" data-aos-duration="1200">
+        Entertainment Services
+      </h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+        Professional DJ & Event Entertainment
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Club DJ -->
+      <div class="col-md-4">
+        <div class="service-card advanced-card text-center p-4 rounded-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="icon-wrapper position-relative">
+            <i class="fa-solid fa-music service-icon"></i>
+            <span class="sparkle"></span>
+            <span class="sparkle"></span>
+            <span class="sparkle"></span>
+          </div>
+          <h5>Club DJ</h5>
+          <p>Nightclubs, bars, lounges & parties</p>
+        </div>
+      </div>
+
+      <!-- Weddings -->
+      <div class="col-md-4">
+        <div class="service-card advanced-card text-center p-4 rounded-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="icon-wrapper position-relative">
+            <i class="fa-solid fa-ring service-icon"></i>
+            <span class="sparkle"></span>
+            <span class="sparkle"></span>
+            <span class="sparkle"></span>
+          </div>
+          <h5>Weddings</h5>
+          <p>Luxury wedding entertainment</p>
+        </div>
+      </div>
+
+      <!-- TV & Media -->
+      <div class="col-md-4">
+        <div class="service-card advanced-card text-center p-4 rounded-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="icon-wrapper position-relative">
+            <i class="fa-solid fa-tv service-icon"></i>
+            <span class="sparkle"></span>
+            <span class="sparkle"></span>
+            <span class="sparkle"></span>
+          </div>
+          <h5>TV & Media</h5>
+          <p>TV shows, promotions & broadcasts</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section position-relative text-center py-5">
+  <div class="cta-overlay"></div>
+
+  <div class="container position-relative text-white">
+    <h2 class="cta-title neon-text" data-aos="fade-down" data-aos-duration="1200">
+      Make Your Event Unforgettable
+    </h2>
+    
+  </div>
+
+  <!-- Optional floating particles -->
+  <canvas id="cta-particles"></canvas>
+</section>
+
+
+
+<footer class="footer text-center">
+  <p>© 2026 DeejayKris256ug. All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="assets/js/main.js"></script>
+<script src="style.js"></script>
+</body>
+</html>

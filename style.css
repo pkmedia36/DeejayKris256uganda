@@ -1,0 +1,322 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0d0d0d;
+  color: #fff;
+}
+
+.navbar {
+  background: rgba(0,0,0,0.9);
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(to right, #000, #111);
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.section-title {
+  font-weight: 700;
+}
+
+.service-card {
+  background: #151515;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.service-card i {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #0d6efd;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  background: #1f1f1f;
+}
+
+.cta {
+  background: #0d6efd;
+  padding: 60px 20px;
+}
+
+.footer {
+  background: #000;
+  padding: 20px;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  color: #fff;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(0.5);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 2;
+}
+
+.hero-content { z-index: 3; }
+
+
+
+
+
+
+/* Neon letters animation */
+.hero-title span {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #ff3399;
+  text-shadow: 0 0 10px #ff3399, 0 0 25px #ff66cc;
+  transition: transform 0.3s, text-shadow 0.3s;
+}
+
+.hero-title span:hover {
+  transform: scale(1.2) rotate(-2deg);
+  text-shadow: 0 0 20px #ff3399, 0 0 50px #ff66cc;
+}
+
+/* Hero subtitle */
+.hero-subtitle {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  color: #fff;
+  opacity: 0.9;
+}
+
+/* Neon button with sparkles */
+.btn-neon {
+  background: linear-gradient(45deg, #ff3399, #ffcc00);
+  color: #000;
+  font-weight: 700;
+  border-radius: 50px;
+  padding: 12px 35px;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px #ff3399, 0 0 30px #ffcc00;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.btn-neon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #ff3399, 0 0 60px #ffcc00;
+  color: #fff;
+}
+
+/* Sparkle animation */
+.btn-neon .sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  opacity: 0;
+  pointer-events: none;
+  animation: sparkleAnim 1.5s infinite;
+}
+
+.btn-neon .sparkle:nth-child(1) { animation-delay: 0s; }
+.btn-neon .sparkle:nth-child(2) { animation-delay: 0.5s; }
+.btn-neon .sparkle:nth-child(3) { animation-delay: 1s; }
+
+@keyframes sparkleAnim {
+  0% { transform: translate(0,0) scale(0); opacity: 1; }
+  50% { transform: translate(calc(-50px + 100px*var(--i)), calc(-50px + 100px*var(--i))) scale(1); opacity: 1; }
+  100% { transform: translate(0,0) scale(0); opacity: 0; }
+}
+
+
+
+/*SERVICES CSS*/
+/* Section background */
+.services-section {
+  background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Section title neon animation */
+.section-title.neon-text {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #ff3399;
+  text-shadow: 0 0 5px #ff3399, 0 0 20px #ff66cc;
+  letter-spacing: 2px;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+.section-title.neon-text:hover {
+  color: #ffcc00;
+  text-shadow: 0 0 20px #ff3399, 0 0 50px #ffcc00;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #fff;
+  opacity: 0.85;
+}
+
+/* Advanced service card */
+.advanced-card {
+  background: #111;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: transform 0.4s, box-shadow 0.4s;
+  cursor: pointer;
+  overflow: hidden;
+}
+.advanced-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px #ff3399, 0 0 60px #ffcc00;
+}
+
+/* Service icon */
+.service-icon {
+  font-size: 3rem;
+  color: #ff3399;
+  transition: transform 0.4s, color 0.4s;
+}
+.advanced-card:hover .service-icon {
+  transform: scale(1.4) rotate(15deg);
+  color: #ffcc00;
+}
+
+/* Sparkle animation */
+.icon-wrapper .sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  pointer-events: none;
+  animation: sparkleAnim 1.5s infinite;
+}
+.icon-wrapper .sparkle:nth-child(1) { animation-delay: 0s; }
+.icon-wrapper .sparkle:nth-child(2) { animation-delay: 0.5s; }
+.icon-wrapper .sparkle:nth-child(3) { animation-delay: 1s; }
+
+@keyframes sparkleAnim {
+  0% { transform: translate(0,0) scale(0); opacity: 1; }
+  50% { transform: translate(calc(-20px + 40px*var(--i)), calc(-20px + 40px*var(--i))) scale(1); opacity: 1; }
+  100% { transform: translate(0,0) scale(0); opacity: 0; }
+}
+
+/* Card titles and text */
+.advanced-card h5 { font-weight: 700; margin: 10px 0; color: #fff; }
+.advanced-card p { color: #ccc; opacity: 0.85; }
+
+
+/* CTA section styling */
+.cta-section {
+  position: relative;
+  background: linear-gradient(135deg, #0a0a0a, #111);
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+.cta-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ff3399;
+  text-shadow: 0 0 10px #ff3399, 0 0 25px #ff66cc;
+  letter-spacing: 2px;
+  z-index: 2;
+  transition: transform 0.3s, text-shadow 0.3s;
+}
+
+.cta-title:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 20px #ff3399, 0 0 50px #ffcc00;
+}
+
+/* Neon button */
+.btn-neon {
+  background: linear-gradient(45deg, #ff3399, #ffcc00);
+  color: #000;
+  font-weight: 700;
+  border-radius: 50px;
+  padding: 12px 40px;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px #ff3399, 0 0 30px #ffcc00;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.btn-neon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #ff3399, 0 0 60px #ffcc00;
+  color: #fff;
+}
+
+/* Sparkle animation */
+.btn-neon .sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  pointer-events: none;
+  animation: sparkleAnim 1.5s infinite;
+}
+
+.btn-neon .sparkle:nth-child(1) { animation-delay: 0s; }
+.btn-neon .sparkle:nth-child(2) { animation-delay: 0.5s; }
+.btn-neon .sparkle:nth-child(3) { animation-delay: 1s; }
+
+@keyframes sparkleAnim {
+  0% { transform: translate(0,0) scale(0); opacity: 1; }
+  50% { transform: translate(calc(-50px + 100px*var(--i)), calc(-50px + 100px*var(--i))) scale(1); opacity: 1; }
+  100% { transform: translate(0,0) scale(0); opacity: 0; }
+}
+
+/* Optional canvas for subtle background particles */
+#cta-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}

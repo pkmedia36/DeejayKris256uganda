@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Clubs & Venues | DeejayKris256ug</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --neon:#0d6efd;
+  --neon-soft:#66b0ff;
+  --dark:#0b0b0b;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--dark);
+  color:#fff;
+  overflow-x:hidden;
+  padding-top: 90px;
+}
+/* ================= NAVBAR ================= */
+.neon-navbar{
+  background:rgba(0,0,0,.65);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  transition:.4s ease;
+}
+
+.neon-logo{
+  color:#0d6efd;
+  letter-spacing:2px;
+  text-shadow:0 0 15px rgba(13,110,253,.9);
+}
+
+.navbar-nav .nav-link{
+  color:#ddd;
+  font-weight:500;
+  position:relative;
+  transition:.3s ease;
+}
+
+.navbar-nav .nav-link::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0%;
+  height:2px;
+  background:#0d6efd;
+  transition:.4s ease;
+  box-shadow:0 0 12px #0d6efd;
+}
+
+.navbar-nav .nav-link:hover{
+  color:#fff;
+}
+.navbar-nav .nav-link:hover::after{
+  width:100%;
+}
+
+/* ACTIVE LINK */
+.navbar-nav .nav-link.active{
+  color:#0d6efd;
+}
+.navbar-nav .nav-link.active::after{
+  width:100%;
+}
+
+/* BOOK BUTTON */
+.book-btn{
+  border-radius:30px;
+  font-weight:600;
+  transition:.4s ease;
+}
+.book-btn:hover{
+  background:#0d6efd;
+  box-shadow:0 0 20px rgba(13,110,253,.9);
+  transform:translateY(-2px);
+}
+
+/* MOBILE MENU */
+@media(max-width:991px){
+  .navbar-collapse{
+    background:#0b0b0b;
+    border-radius:12px;
+    padding:20px;
+    margin-top:15px;
+    box-shadow:0 0 30px rgba(0,0,0,.8);
+  }
+}
+
+/* ================= HERO ================= */
+.page-hero{
+  background:url('assets/images/clubs-hero.jpg') center/cover no-repeat;
+  min-height:70vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+.page-hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,.85), rgba(0,0,0,.6));
+}
+.page-hero-content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  animation:heroFade 1.4s ease forwards;
+}
+.page-hero h1{
+  text-shadow:0 0 20px var(--neon);
+}
+.page-hero p{
+  max-width:650px;
+  margin:auto;
+}
+
+/* ================= SECTION TITLE ================= */
+.section-title{
+  font-weight:700;
+  text-align:center;
+  margin-bottom:50px;
+  position:relative;
+}
+.section-title::after{
+  content:'';
+  width:70px;
+  height:4px;
+  background:var(--neon);
+  display:block;
+  margin:15px auto 0;
+  box-shadow:0 0 15px var(--neon);
+}
+
+/* ================= CLUB CARD ================= */
+.club-card{
+  background:#141414;
+  border-radius:18px;
+  overflow:hidden;
+  position:relative;
+  transition:.5s ease;
+  box-shadow:0 10px 25px rgba(0,0,0,.6);
+  animation:cardFadeUp .9s ease forwards;
+}
+.club-card:hover{
+  transform:translateY(-12px) scale(1.02);
+  box-shadow:0 0 25px var(--neon);
+}
+
+/* IMAGE */
+.club-card img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  transition:.6s ease;
+}
+.club-card:hover img{
+  transform:scale(1.15);
+  filter:brightness(.6);
+}
+
+/* OVERLAY */
+.club-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, transparent, rgba(13,110,253,.9));
+  opacity:0;
+  transition:.5s;
+}
+.club-card:hover .club-overlay{
+  opacity:1;
+}
+
+/* BODY */
+.club-card-body{
+  padding:20px;
+  position:relative;
+  z-index:2;
+}
+.club-card-body h5{
+  font-weight:600;
+  margin-bottom:8px;
+}
+.club-card-body p{
+  font-size:14px;
+  opacity:.85;
+}
+.club-location{
+  font-size:13px;
+  color:var(--neon-soft);
+}
+
+/* ================= CTA ================= */
+.cta{
+  background:linear-gradient(135deg, var(--neon), #0047b3);
+  padding:80px 20px;
+  text-align:center;
+}
+.cta h2{
+  font-weight:700;
+  text-shadow:0 0 15px rgba(255,255,255,.3);
+}
+.cta a{
+  box-shadow:0 0 20px rgba(255,255,255,.4);
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes heroFade{
+  from{opacity:0; transform:translateY(-40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+@keyframes cardFadeUp{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top neon-navbar">
+  <div class="container">
+
+    <!-- LOGO -->
+    <a class="navbar-brand fw-bold" href="index.html">
+      <span class="neon-logo">DJ KRIS</span>
+    </a>
+
+    <!-- TOGGLER -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#djNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- MENU -->
+    <div class="collapse navbar-collapse justify-content-end" id="djNavbar">
+      <ul class="navbar-nav gap-lg-3 text-center">
+
+        <li class="nav-item">
+          <a class="nav-link" href="home4.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="services.html">Services</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="clubs.html">Clubs</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="videos.html">Videos</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="countries.html">Countries</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link btn btn-outline-primary px-4 ms-lg-3 book-btn" href="booking.html">
+            Book Now
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <h1 class="fw-bold display-4">Clubs & Venues</h1>
+    <p class="opacity-75 mt-3">
+      World-class nightlife destinations where DJ Kris delivers unforgettable energy
+    </p>
+  </div>
+</section>
+
+<!-- CLUBS GRID -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title">Featured Clubs & Lounges</h2>
+    <div class="row g-4">
+
+      <!-- CARD -->
+      <div class="col-md-4">
+        <div class="club-card">
+          <img src="assets/images/made-in -ug.webp" alt="Venom Club Dubai">
+          <div class="club-overlay"></div>
+          <div class="club-card-body">
+            <h5>Venom Club Dubai</h5>
+            <p class="club-location">Dubai, UAE</p>
+            <p>International crowd, premium sound system, elite nightlife experience.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="club-card">
+          <img src="assets/images/mix-photo-1.avif" alt="Vibez Lounge Dubai">
+          <div class="club-overlay"></div>
+          <div class="club-card-body">
+            <h5>Vibez Lounge</h5>
+            <p class="club-location">Dubai, UAE</p>
+            <p>Luxury lounge atmosphere with curated DJ nights.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="club-card">
+          <img src="assets/images/KRIS ALBUM ART.jpg.jpeg" alt="Club Palui Uganda">
+          <div class="club-overlay"></div>
+          <div class="club-card-body">
+            <h5>Club Palui</h5>
+            <p class="club-location">Kampala, Uganda</p>
+            <p>Live events featuring international DJs and performers.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="club-card">
+          <img src="assets/images/image-7.jpeg" alt="Club Silk Dubai">
+          <div class="club-overlay"></div>
+          <div class="club-card-body">
+            <h5>Club Silk</h5>
+            <p class="club-location">Dubai, UAE</p>
+            <p>High-energy nightlife with top-tier production.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="club-card">
+          <img src="assets/images/hyper.avif" alt="Flair 5 Dubai">
+          <div class="club-overlay"></div>
+          <div class="club-card-body">
+            <h5>Flair 5</h5>
+            <p class="club-location">Dubai, UAE</p>
+            <p>Rooftop vibes with panoramic views and live DJ sessions.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="club-card">
+          <img src="assets/images/image-3.jpeg" alt="Club Suiz China">
+          <div class="club-overlay"></div>
+          <div class="club-card-body">
+            <h5>Club Suiz</h5>
+            <p class="club-location">Beijing, China</p>
+            <p>International club scene with massive festival nights.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Bring DJ Kris to Your Club</h2>
+  <p class="mt-2">📧 christopherkato05@gmail.com | 📞 +971 529605660</p>
+  <a href="booking.html" class="btn btn-light btn-lg mt-3">Book Now</a>
+</section>
+
+<footer class="text-center py-4 bg-black">
+  <p class="mb-0">© 2026 DeejayKris256ug. All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

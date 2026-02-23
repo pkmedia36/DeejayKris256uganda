@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Events | DeejayKris256ug</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0b0b0b;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+/* HERO */
+.page-hero{
+  background: url('assets/images/events-hero.jpg') center/cover no-repeat;
+  padding: 140px 0;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,.75);
+}
+.page-hero-content{
+  position: relative;
+  z-index: 2;
+  animation: fadeInDown 1s ease-in-out;
+}
+.page-hero h1{
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ff3399;
+  text-shadow: 0 0 15px #ff3399, 0 0 30px #ff66cc;
+}
+.page-hero p{
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+/* SECTION TITLE */
+.section-title{
+  font-weight:700;
+  margin-bottom:35px;
+  text-align:center;
+  font-size:2rem;
+  color:#ff3399;
+  position: relative;
+}
+.section-title::after{
+  content:'';
+  width:70px;
+  height:4px;
+  background:#ff66cc;
+  display:block;
+  margin:10px auto 0;
+  border-radius:2px;
+}
+
+/* NAVBAR */
+.custom-navbar{
+  background:rgba(0,0,0,.3);
+  backdrop-filter: blur(10px);
+  transition:.4s;
+}
+.custom-navbar.scrolled{
+  background:#000;
+  box-shadow:0 10px 40px rgba(0,0,0,.7);
+}
+
+.neon-text{
+  color:#0d6efd;
+  text-shadow:0 0 10px #0d6efd;
+}
+
+.nav-link{
+  position:relative;
+  transition:.3s;
+}
+.nav-link::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:#0d6efd;
+  transition:.3s;
+}
+.nav-link:hover::after,
+.nav-link.active::after{
+  width:100%;
+}
+
+.neon-btn{
+  box-shadow:0 0 15px rgba(13,110,253,.6);
+}
+
+/* BUBBLES BACKGROUND */
+.bubbles{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  overflow:hidden;
+}
+.bubbles span{
+  position:absolute;
+  bottom:-100px;
+  width:20px;
+  height:20px;
+  background:rgba(13,110,253,.4);
+  border-radius:50%;
+  animation:float 20s linear infinite;
+}
+.bubbles span:nth-child(even){
+  background:rgba(255,255,255,.15);
+}
+
+@keyframes float{
+  from{
+    transform:translateY(0) scale(.8);
+  }
+  to{
+    transform:translateY(-120vh) scale(1.4);
+  }
+}
+
+/* PAGE HERO UPGRADE */
+.page-hero{
+  overflow:hidden;
+}
+.page-hero h1{
+  animation:fadeDown 1s ease forwards;
+}
+.page-hero p{
+  animation:fadeUp 1.2s ease forwards;
+}
+
+@keyframes fadeDown{
+  from{opacity:0; transform:translateY(-40px);}
+  to{opacity:1; transform:none;}
+}
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:none;}
+}
+
+/* EVENT CARDS */
+.event-card{
+  background:#141414;
+  border-radius:20px;
+  overflow:hidden;
+  transition:.5s;
+  box-shadow: 0 4px 20px rgba(255,51,153,0.3);
+  cursor:pointer;
+  position: relative;
+}
+.event-card:hover{
+  transform: translateY(-12px) scale(1.02);
+  background:#1c1c1c;
+  box-shadow: 0 8px 30px rgba(255,51,153,0.6);
+}
+.event-card img{
+  width:100%;
+  display:block;
+  transition:.5s;
+}
+.event-card:hover img{
+  transform: scale(1.05);
+}
+.event-card-body{
+  padding:25px;
+}
+.event-card-body h5{
+  margin-bottom:12px;
+  color:#ffcc00;
+  font-weight:700;
+}
+.event-card-body p{
+  opacity:.85;
+  font-size:14px;
+  line-height:1.5;
+}
+
+/* CTA */
+.cta{
+  background: linear-gradient(90deg,#ff3399,#ffcc00);
+  padding:80px 20px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.cta h2{
+  font-size:2.8rem;
+  font-weight:700;
+  color:#000;
+  text-shadow: 0 0 20px #fff, 0 0 50px #ffcc00;
+  margin-bottom:15px;
+  animation: neonPulse 1.5s infinite alternate;
+}
+.cta p{
+  font-size:1.1rem;
+  color:#000;
+  margin-bottom:20px;
+}
+.cta .btn{
+  background:#000;
+  color:#ffcc00;
+  font-weight:700;
+  border-radius:50px;
+  padding:12px 40px;
+  font-size:1.2rem;
+  text-transform:uppercase;
+  transition:.4s;
+}
+.cta .btn:hover{
+  background:#ffcc00;
+  color:#000;
+  box-shadow:0 0 20px #fff,0 0 40px #ff3399;
+}
+
+/* FOOTER */
+footer{
+  background:#0a0a0a;
+  color:#888;
+  text-align:center;
+  padding:25px 0;
+  font-size:14px;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity:0; transform: translateY(-40px);}
+  to { opacity:1; transform: translateY(0);}
+}
+
+@keyframes neonPulse {
+  0% { text-shadow: 0 0 10px #fff, 0 0 30px #ffcc00;}
+  100% { text-shadow: 0 0 20px #fff, 0 0 50px #ff3399;}
+}
+
+/* Responsive Adjustments */
+@media(max-width:768px){
+  .page-hero h1{ font-size:2.5rem;}
+  .cta h2{ font-size:2rem;}
+}
+</style>
+</head>
+
+<body>
+        <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+  <div class="container">
+    <a class="navbar-brand fw-bold neon-text" href="index.html">
+      DJ KRIS
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#djNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="djNavbar">
+      <ul class="navbar-nav mb-2 mb-lg-0 gap-lg-3">
+        <li class="nav-item"><a class="nav-link" href="home5.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="promotions.html">Promotions</a></li>
+        <li class="nav-item"><a class="nav-link" href="clubs.html">Clubs</a></li>
+        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item">
+          <a class="btn btn-outline-primary px-4 neon-btn" href="booking.html">Book Me</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- ANIMATED BUBBLES -->
+<div class="bubbles">
+  <span style="left:10%; animation-duration:18s;"></span>
+  <span style="left:25%; animation-duration:22s;"></span>
+  <span style="left:40%; animation-duration:16s;"></span>
+  <span style="left:55%; animation-duration:25s;"></span>
+  <span style="left:70%; animation-duration:20s;"></span>
+  <span style="left:85%; animation-duration:28s;"></span>
+</div>
+
+<!-- HERO -->
+<section class="page-hero text-center">
+  <div class="container page-hero-content">
+    <h1>Events</h1>
+    <p>Past & Upcoming DJ Performances</p>
+  </div>
+</section>
+
+<!-- UPCOMING EVENTS -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Upcoming Events</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="event-card">
+          <img src="assets/images/hyper.avif" alt="Beach Party Dubai">
+          <div class="event-card-body">
+            <h5>Beach Party Dubai</h5>
+            <p>📍 Dubai | 🗓 15 March 2026 | 🎧 3 Hours</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="event-card">
+          <img src="assets/images/mix-photo.avif" alt="Vibez Lounge Dubai">
+          <div class="event-card-body">
+            <h5>Vibez Lounge Dubai</h5>
+            <p>📍 Dubai | 🗓 22 March 2026 | 🎧 4 Hours</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="event-card">
+          <img src="assets/images/made-in -ug.webp" alt="Club Palui UG">
+          <div class="event-card-body">
+            <h5>Club Palui UG</h5>
+            <p>📍 Uganda | 🗓 5 April 2026 | 🎧 3 Hours</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAST EVENTS -->
+<section class="py-5 bg-dark">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Past Events</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="event-card">
+          <img src="assets/images/KRIS ALBUM ART.jpg.jpeg" alt="Club Silk Dubai">
+          <div class="event-card-body">
+            <h5>Club Silk Dubai</h5>
+            <p>🎧 2025 | Highlight: Crowd of 500+ dancing all night</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="event-card">
+          <img src="assets/images/image-3.jpeg" alt="Amnesia Kenya">
+          <div class="event-card-body">
+            <h5>Amnesia Kenya</h5>
+            <p>🎧 2025 | International DJ set and festival appearance</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="event-card">
+          <img src="assets/images/mix-photo-1.avif" alt="Spark TV UG">
+          <div class="event-card-body">
+            <h5>Spark TV UG</h5>
+            <p>🎧 2024 | TV broadcast live DJ performance</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Book DJ Kris for Your Next Event</h2>
+  <p>Email: christopherkato05@gmail.com | Phone: +971 529605660</p>
+  <a href="booking.html" class="btn btn-lg mt-3">Book Now</a>
+</section>
+
+<footer class="text-center py-4 bg-black">
+  <p>© 2026 DeejayKris256ug. All Rights Reserved.</p>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+
+  
+AOS.init({ once:true, duration:1200, easing:'ease-in-out' });
+</script>
+
+</body>
+</html>

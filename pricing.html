@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pricing | DeejayKris256ug</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- AOS Animations -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+body {
+  font-family:'Poppins', sans-serif;
+  background:#0b0b0b;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* HERO */
+.page-hero{
+  background:url('assets/images/pricing-hero.jpg') center/cover no-repeat fixed;
+  padding:130px 0;
+  position:relative;
+  text-align:center;
+}
+.page-hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.75);
+}
+.page-hero-content{
+  position:relative;
+  z-index:2;
+}
+.page-hero h1{
+  font-size:3rem;
+  font-weight:700;
+  text-shadow:0 0 20px #0d6efd;
+}
+.page-hero p{
+  font-size:1.2rem;
+  opacity:.85;
+}
+
+/* SECTION TITLE */
+.section-title{
+  font-weight:700;
+  margin-bottom:35px;
+  text-align:center;
+  position:relative;
+}
+.section-title::after{
+  content:'';
+  width:60px;
+  height:3px;
+  background:#0d6efd;
+  display:block;
+  margin:10px auto 0;
+}
+
+/* PRICING CARDS */
+.pricing-card{
+  background:#141414;
+  border-radius:16px;
+  padding:30px 20px;
+  text-align:center;
+  transition:.4s;
+  border:2px solid transparent;
+  box-shadow:0 0 15px rgba(13,110,253,0.3);
+  position:relative;
+}
+.pricing-card:hover{
+  transform:translateY(-8px) scale(1.03);
+  border-color:#0d6efd;
+  box-shadow:0 0 25px rgba(13,110,253,0.6);
+}
+.pricing-card h5{
+  font-weight:600;
+  margin-bottom:15px;
+}
+.pricing-card .price{
+  font-size:32px;
+  font-weight:700;
+  margin-bottom:15px;
+  color:#0d6efd;
+  text-shadow:0 0 15px #0d6efd;
+}
+.pricing-card ul{
+  list-style:none;
+  padding:0;
+  margin-bottom:20px;
+}
+.pricing-card ul li{
+  margin-bottom:10px;
+  opacity:.85;
+  position:relative;
+  padding-left:20px;
+}
+.pricing-card ul li::before{
+  content:'\f00c';
+  font-family:"Font Awesome 6 Free";
+  font-weight:900;
+  position:absolute;
+  left:0;
+  color:#0d6efd;
+}
+
+/* Popular badge */
+.pricing-card .badge-popular{
+  position:absolute;
+  top:-10px;
+  right:-10px;
+  background:#0d6efd;
+  color:#fff;
+  padding:6px 12px;
+  border-radius:50px;
+  font-size:12px;
+  font-weight:600;
+  text-transform:uppercase;
+  box-shadow:0 0 10px #0d6efd;
+}
+
+/* Button */
+.pricing-card button{
+  background:#0d6efd;
+  border:none;
+  padding:12px 30px;
+  font-weight:600;
+  border-radius:50px;
+  transition:.4s;
+  box-shadow:0 0 15px #0d6efd, 0 0 30px #66b0ff;
+}
+.pricing-card button:hover{
+  background:#0b5ed7;
+  transform:translateY(-3px);
+  box-shadow:0 0 25px #0d6efd,0 0 50px #66b0ff;
+}
+
+/* CTA */
+.cta{
+  background:#0d6efd;
+  padding:70px 20px;
+  text-align:center;
+}
+.cta h2{
+  font-weight:700;
+  text-shadow:0 0 15px #fff;
+}
+.cta .btn-light{
+  border-radius:50px;
+  padding:12px 40px;
+  font-weight:600;
+  box-shadow:0 0 15px #fff,0 0 30px #66b0ff;
+  transition:.4s;
+}
+.cta .btn-light:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 25px #fff,0 0 50px #66b0ff;
+}
+
+/* Footer */
+footer{
+  background:#000;
+  padding:25px;
+  text-align:center;
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="page-hero" data-aos="fade-down">
+  <div class="container page-hero-content">
+    <h1 class="fw-bold display-5">Pricing & Packages</h1>
+    <p class="opacity-75">Choose the perfect DJ Kris package for your event</p>
+  </div>
+</section>
+
+<!-- PRICING SECTION -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Event Packages</h2>
+    <div class="row g-4">
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="pricing-card">
+          <h5>Basic Package</h5>
+          <p class="price">$500</p>
+          <ul>
+            <li>2-Hour DJ Set</li>
+            <li>Standard Sound System</li>
+            <li>Up to 50 Guests</li>
+          </ul>
+          <button onclick="location.href='booking.html'">Book Now</button>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="pricing-card">
+          <div class="badge-popular">Popular</div>
+          <h5>Standard Package</h5>
+          <p class="price">$1,000</p>
+          <ul>
+            <li>3-Hour DJ Set</li>
+            <li>Professional Sound & Lights</li>
+            <li>Up to 150 Guests</li>
+            <li>Social Media Shoutout</li>
+          </ul>
+          <button onclick="location.href='booking.html'">Book Now</button>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="pricing-card">
+          <h5>Premium Package</h5>
+          <p class="price">$2,000</p>
+          <ul>
+            <li>Full 4-Hour DJ Set</li>
+            <li>Premium Sound, Lights & Visuals</li>
+            <li>Unlimited Guests</li>
+            <li>Event Promotion + Live Stream</li>
+            <li>Customized Playlist</li>
+          </ul>
+          <button onclick="location.href='booking.html'">Book Now</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" data-aos="zoom-in">
+  <h2>Book DJ Kris for Your Event</h2>
+  <p>Email: christopherkato05@gmail.com | Phone: +971 529605660</p>
+  <a href="booking.html" class="btn btn-light btn-lg mt-3">Book Now</a>
+</section>
+
+<footer class="text-center py-4 bg-black">
+  <p>© 2026 DeejayKris256ug. All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({ duration:1200, once:true });
+</script>
+</body>
+</html>

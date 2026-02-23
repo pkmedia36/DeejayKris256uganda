@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TV Channels | DeejayKris256ug</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family:'Poppins', sans-serif;
+  background:#0b0b0b;
+  color:#fff;
+}
+
+/* HERO */
+.page-hero{
+  background:url('assets/images/tv-hero.jpg') center/cover no-repeat;
+  padding:130px 0;
+  position:relative;
+}
+.page-hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.75);
+}
+.page-hero-content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+}
+
+/* SECTION TITLE */
+.section-title{
+  font-weight:700;
+  margin-bottom:35px;
+  text-align:center;
+}
+.section-title::after{
+  content:'';
+  width:60px;
+  height:3px;
+  background:#0d6efd;
+  display:block;
+  margin:10px auto 0;
+}
+
+/* TV CARD */
+.tv-card{
+  background:#141414;
+  border-radius:16px;
+  overflow:hidden;
+  transition:.3s;
+  text-align:center;
+}
+.tv-card:hover{
+  transform:translateY(-6px);
+  background:#1c1c1c;
+}
+.tv-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+.tv-card-body{
+  padding:15px;
+}
+.tv-card-body h5{
+  margin-bottom:8px;
+}
+.tv-card-body p{
+  font-size:14px;
+  opacity:.8;
+}
+
+/* CTA */
+.cta{
+  background:#0d6efd;
+  padding:70px 20px;
+  text-align:center;
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <h1 class="fw-bold display-5">TV Channels & Shows</h1>
+    <p class="opacity-75">DJ Kris featured on TV across the globe</p>
+  </div>
+</section>
+
+<!-- TV CHANNELS GRID -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title">Featured TV Channels</h2>
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="tv-card">
+          <img src="assets/images/tv1.jpg" alt="Spark TV UG">
+          <div class="tv-card-body">
+            <h5>Spark TV Uganda</h5>
+            <p>Live DJ set appearance, Uganda</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="tv-card">
+          <img src="assets/images/tv2.jpg" alt="WBS TV UG">
+          <div class="tv-card-body">
+            <h5>WBS TV Uganda</h5>
+            <p>Exclusive interview and performance</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="tv-card">
+          <img src="assets/images/tv3.jpg" alt="Hot 100 FM UG">
+          <div class="tv-card-body">
+            <h5>Hot 100 FM UG</h5>
+            <p>Radio and TV crossover special DJ set</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="tv-card">
+          <img src="assets/images/tv4.jpg" alt="Seasons Lounge Rwanda">
+          <div class="tv-card-body">
+            <h5>Seasons Lounge Rwanda</h5>
+            <p>DJ Kris featured on live TV coverage</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="tv-card">
+          <img src="assets/images/tv5.jpg" alt="T1 Club SA">
+          <div class="tv-card-body">
+            <h5>T1 Club South Africa</h5>
+            <p>TV appearance during live club events</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="tv-card">
+          <img src="assets/images/tv6.jpg" alt="Guvnor SA">
+          <div class="tv-card-body">
+            <h5>Guvnor SA</h5>
+            <p>Live televised DJ performance</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Book DJ Kris for Your Next Event</h2>
+  <p>Email: christopherkato05@gmail.com | Phone: +971 529605660</p>
+  <a href="booking.html" class="btn btn-light btn-lg mt-3">Book Now</a>
+</section>
+
+<footer class="text-center py-4 bg-black">
+  <p>© 2026 DeejayKris256ug. All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

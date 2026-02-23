@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Videos | DeejayKris256ug</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- AOS Animations -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+body {
+  font-family:'Poppins', sans-serif;
+  background:#0b0b0b;
+  color:#fff;
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+}
+
+/* HERO SECTION */
+.page-hero{
+  position:relative;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:url('assets/images/mix-photo-1.avif') center/cover no-repeat;
+  overflow:hidden;
+}
+.page-hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.65);
+}
+.page-hero-content{
+  position:relative;
+  z-index:2;
+  animation: fadeInUp 2s ease forwards;
+}
+.page-hero-content h1{
+  font-size:3rem;
+  font-weight:700;
+  text-shadow:0 0 20px #0d6efd;
+  margin-bottom:15px;
+}
+.page-hero-content p{
+  font-size:1.2rem;
+  opacity:.85;
+  margin-bottom:25px;
+}
+.page-hero-content .btn{
+  padding:12px 40px;
+  font-weight:600;
+  border-radius:50px;
+  box-shadow:0 0 20px #0d6efd,0 0 40px #66b0ff;
+  transition:.4s;
+}
+.page-hero-content .btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 30px #0d6efd,0 0 60px #66b0ff;
+}
+
+/* HERO ANIMATION */
+@keyframes fadeInUp{
+  0%{opacity:0; transform:translateY(30px);}
+  100%{opacity:1; transform:translateY(0);}
+}
+
+/* SECTION TITLE */
+.section-title{
+  font-weight:700;
+  margin-bottom:35px;
+  text-align:center;
+  color:#fff;
+}
+.section-title::after{
+  content:'';
+  width:60px;
+  height:3px;
+  background:#0d6efd;
+  display:block;
+  margin:10px auto 0;
+}
+
+/* VIDEO CARDS */
+.video-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:16px;
+  transition:.4s ease, box-shadow .4s ease;
+  background:#141414;
+  box-shadow:0 0 10px rgba(13,110,253,.3);
+}
+.video-card:hover{
+  transform:translateY(-8px) scale(1.03);
+  box-shadow:0 0 25px rgba(13,110,253,.6);
+}
+.video-card iframe, .video-card video{
+  width:100%;
+  height:250px;
+  border:none;
+  border-radius:16px;
+  transition:.4s;
+}
+.video-card:hover iframe, .video-card:hover video{
+  transform:scale(1.05);
+}
+.video-card h6{
+  color:#0d6efd;
+  margin-bottom:5px;
+}
+.video-card p{
+  font-size:14px;
+  opacity:.85;
+  margin-bottom:10px;
+}
+
+/* CTA SECTION */
+.cta{
+  background:#0d6efd;
+  padding:80px 20px;
+  text-align:center;
+}
+.cta h2{
+  font-weight:700;
+  color:#fff;
+  text-shadow:0 0 15px #fff;
+}
+.cta .btn-light{
+  border-radius:50px;
+  padding:12px 40px;
+  font-weight:600;
+  box-shadow:0 0 15px #fff,0 0 30px #66b0ff;
+  transition:.4s;
+}
+.cta .btn-light:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 25px #fff,0 0 50px #66b0ff;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  padding:25px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>DJ Kris Videos</h1>
+    <p>Watch performances, TV appearances & live sets</p>
+    <a href="booking.html" class="btn btn-light btn-lg">Book Now</a>
+  </div>
+</section>
+
+<!-- VIDEO GALLERY -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Featured Videos</h2>
+    <div class="row g-4">
+      
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" allowfullscreen></iframe>
+          <div class="p-2">
+            <h6>Club Performance Dubai</h6>
+            <p>Live set at Dubai's top club</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/O_fPKMVENwQ" allowfullscreen></iframe>
+          <div class="p-2">
+            <h6>Beach Festival Set</h6>
+            <p>DJ Kris mixing at the beach festival</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/O_fPKMVENwQ" allowfullscreen></iframe>
+          <div class="p-2">
+            <h6>TV Appearance UG</h6>
+            <p>Featured on Spark TV Uganda</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more video cards similarly -->
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" data-aos="zoom-in">
+  <h2>Book DJ Kris for Your Event</h2>
+  <p>Email: christopherkato05@gmail.com | Phone: +971 529605660</p>
+  <a href="booking.html" class="btn btn-light btn-lg mt-3">Book Now</a>
+</section>
+
+<footer class="text-center py-4 bg-black">
+  <p>© 2026 DeejayKris256ug. All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({ duration:1200, once:true });
+</script>
+</body>
+</html>
