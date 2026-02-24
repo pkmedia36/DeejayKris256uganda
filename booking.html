@@ -232,6 +232,82 @@ footer {
     box-shadow:0 0 30px rgba(0,0,0,.8);
   }
 }
+
+/* VIDEO HERO */
+.video-hero{
+  position:relative;
+  min-height:100vh;
+  overflow:hidden;
+  background:#000;
+}
+
+/* VIDEO */
+.hero-video{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform:translate(-50%, -50%);
+  z-index:1;
+}
+
+/* DARK OVERLAY */
+.video-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.85)
+  );
+  z-index:2;
+}
+
+/* CONTENT */
+.page-hero-content{
+  position:relative;
+  z-index:3;
+  color:#fff;
+  max-width:700px;
+}
+
+/* TEXT */
+.hero-title{
+  font-size:clamp(2.5rem, 6vw, 4rem);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  margin-bottom:15px;
+}
+
+.hero-subtitle{
+  font-size:clamp(1.1rem, 2.5vw, 1.4rem);
+  opacity:.9;
+}
+
+/* BUTTON */
+.video-hero .btn{
+  padding:14px 34px;
+  font-weight:600;
+  border-radius:50px;
+  transition:.4s ease;
+}
+
+.video-hero .btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 25px rgba(13,110,253,.7);
+}
+@media (max-width: 768px){
+  .hero-video{
+    display:none;
+  }
+
+  .video-hero{
+    background:url("assets/images/image-2.jpeg") center/cover no-repeat;
+  }
+}
 </style>
 </head>
 
@@ -242,7 +318,7 @@ footer {
   <div class="container">
 
     <!-- LOGO -->
-    <a class="navbar-brand fw-bold" href="home1.html">
+    <a class="navbar-brand fw-bold" href="home3.html">
       <span class="neon-logo">DJ KRIS</span>
     </a>
 
@@ -256,11 +332,11 @@ footer {
       <ul class="navbar-nav gap-lg-3 text-center">
 
         <li class="nav-item">
-          <a class="nav-link" href="home1.html">Home</a>
+          <a class="nav-link" href="index.html">Home</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="events.html">Events</a>
         </li>
 
         <li class="nav-item">
@@ -276,7 +352,7 @@ footer {
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="countries.html">Countries</a>
+          <a class="nav-link" href="gallery.html">Gallery</a>
         </li>
 
         <li class="nav-item">
@@ -291,14 +367,28 @@ footer {
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="page-hero d-flex align-items-center justify-content-center">
-  <div class="container page-hero-content" data-aos="fade-up">
-    <h1>Book DJ Kris</h1>
-    <p>Reserve DJ Kris for your next event</p>
-  </div>
-</section>
+    <!-- HERO WITH VIDEO BACKGROUND -->
+<section class="page-hero video-hero d-flex align-items-center justify-content-center">
+  
+  <!-- Background Video -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="assets/videos/WEBSITE BACK.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
+  <!-- Overlay -->
+  <div class="video-overlay"></div>
+
+  <!-- Content -->
+  <div class="container page-hero-content text-center" data-aos="fade-up">
+    <h1 class="hero-title">Book DJ Kris</h1>
+    <p class="hero-subtitle">Reserve DJ Kris for your next event</p>
+    <a href="booking.html" class="btn btn-primary btn-lg mt-3">
+      Book Now
+    </a>
+  </div>
+
+</section>
 <!-- BOOKING FORM -->
 <section class="py-5">
   <div class="container">
@@ -369,6 +459,8 @@ document.getElementById('bookingForm').addEventListener('submit', function(e){
     alert('Thank you! Your booking request has been submitted.');
     this.reset();
 });
+
+
 </script>
 
 </body>
