@@ -147,6 +147,28 @@ body {
     0 0 40px rgba(0,247,255,.5);
 }
 
+
+
+.advanced-card::after {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(0,247,255,.35), transparent 70%);
+  opacity: 0;
+  transition: opacity .4s;
+  pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
 .advanced-card {
   background: rgba(255,255,255,.05);
   border: 1px solid rgba(255,255,255,.08);
@@ -173,7 +195,7 @@ body {
   transform: translateY(-10px);
   box-shadow:
     0 0 30px rgba(0,247,255,.4),
-    0 0 80px rgba(143,0,255,.3);
+    
 }
 
 .service-icon {
@@ -184,7 +206,10 @@ body {
 
 .services-section {
   overflow: hidden; /* contain animations */
+  
+  overflow-x: clip; /* modern & better than hidden */
 }
+
 
 .service-card {
   position: relative;
@@ -215,11 +240,17 @@ html, body {
 .cta-section {
   background: radial-gradient(circle, rgba(143,0,255,.15), #050507);
   overflow: hidden;
+  max-width: 100%;
 }
 
 .cta-title {
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 800;
+}
+
+
+.cta-overlay {
+  inset: 0;
 }
 
 /* =====================
@@ -235,6 +266,12 @@ html, body {
 /* =====================
    RESPONSIVE BREAKPOINTS
 ===================== */
+@media (max-width: 768px) {
+  .advanced-card:hover {
+    box-shadow: none;
+    transform: none;
+  }
+}
 
 /* 📱 Phones */
 @media (max-width: 576px) {
