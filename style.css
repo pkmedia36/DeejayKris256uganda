@@ -1,480 +1,244 @@
+/* =====================
+   GLOBAL RESET
+===================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: clamp(14px, 1vw, 18px);
+  scroll-behavior: smooth;
+}
+
 body {
+  margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #0d0d0d;
+  background: #050507;
   color: #fff;
+  overflow-x: hidden;
 }
 
+/* =====================
+   NEON VARIABLES
+===================== */
+:root {
+  --neon-blue: #00f7ff;
+  --neon-purple: #8f00ff;
+  --neon-pink: #ff2bdc;
+}
+
+/* =====================
+   NAVBAR (GLASS + NEON)
+===================== */
 .navbar {
-  background: rgba(0,0,0,0.9);
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.55);
+  border-bottom: 1px solid rgba(255,255,255,.05);
 }
 
-.hero {
-  height: 100vh;
-  background: linear-gradient(to right, #000, #111);
-}
-
-.hero-title {
-  font-size: 3.5rem;
+.navbar-brand {
   font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px var(--neon-blue);
 }
 
-.hero-subtitle {
-  font-size: 1.2rem;
-  opacity: 0.8;
-}
-
-.section-title {
-  font-weight: 700;
-}
-
-.service-card {
-  background: #151515;
-  padding: 30px;
-  text-align: center;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.service-card i {
-  font-size: 40px;
-  margin-bottom: 15px;
-  color: #0d6efd;
-}
-
-.service-card:hover {
-  transform: translateY(-8px);
-  background: #1f1f1f;
-}
-
-.cta {
-  background: #0d6efd;
-  padding: 60px 20px;
-}
-
-.footer {
-  background: #000;
-  padding: 20px;
-}
-
-.hero {
+.nav-link {
   position: relative;
-  height: 100vh;
+  margin-left: 10px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--neon-blue);
+  transition: .3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* =====================
+   HERO SECTION
+===================== */
+.hero {
+  min-height: 100vh;
+  position: relative;
   overflow: hidden;
-  color: #fff;
 }
 
 .hero-video {
   position: absolute;
-  top: 0; left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1;
-  filter: brightness(0.5);
+  filter: brightness(0.5) contrast(1.2);
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
-  z-index: 2;
-}
-
-.hero-content { z-index: 3; }
-
-
-
-
-
-
-/* Neon letters animation */
-.hero-title span {
-  display: inline-block;
-  font-size: 3rem;
-  font-weight: 900;
-  letter-spacing: 2px;
-  color: #ff3399;
-  text-shadow: 0 0 10px #ff3399, 0 0 25px #ff66cc;
-  transition: transform 0.3s, text-shadow 0.3s;
-}
-
-.hero-title span:hover {
-  transform: scale(1.2) rotate(-2deg);
-  text-shadow: 0 0 20px #ff3399, 0 0 50px #ff66cc;
-}
-
-/* Hero subtitle */
-.hero-subtitle {
-  font-size: 1.3rem;
-  letter-spacing: 1px;
-  color: #fff;
-  opacity: 0.9;
-}
-
-/* Neon button with sparkles */
-.btn-neon {
-  background: linear-gradient(45deg, #ff3399, #ffcc00);
-  color: #000;
-  font-weight: 700;
-  border-radius: 50px;
-  padding: 12px 35px;
-  text-transform: uppercase;
-  box-shadow: 0 0 15px #ff3399, 0 0 30px #ffcc00;
-  transition: all 0.3s ease;
-  overflow: hidden;
-  position: relative;
-}
-
-.btn-neon:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 30px #ff3399, 0 0 60px #ffcc00;
-  color: #fff;
-}
-
-/* Sparkle animation */
-.btn-neon .sparkle {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: #fff;
-  border-radius: 50%;
-  top: 50%; left: 50%;
-  opacity: 0;
-  pointer-events: none;
-  animation: sparkleAnim 1.5s infinite;
-}
-
-.btn-neon .sparkle:nth-child(1) { animation-delay: 0s; }
-.btn-neon .sparkle:nth-child(2) { animation-delay: 0.5s; }
-.btn-neon .sparkle:nth-child(3) { animation-delay: 1s; }
-
-@keyframes sparkleAnim {
-  0% { transform: translate(0,0) scale(0); opacity: 1; }
-  50% { transform: translate(calc(-50px + 100px*var(--i)), calc(-50px + 100px*var(--i))) scale(1); opacity: 1; }
-  100% { transform: translate(0,0) scale(0); opacity: 0; }
-}
-
-
-
-/*SERVICES CSS*/
-/* Section background */
-.services-section {
-  background: #0a0a0a;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Section title neon animation */
-.section-title.neon-text {
-  font-size: 2.8rem;
-  font-weight: 900;
-  color: #ff3399;
-  text-shadow: 0 0 5px #ff3399, 0 0 20px #ff66cc;
-  letter-spacing: 2px;
-  transition: color 0.3s, text-shadow 0.3s;
-}
-.section-title.neon-text:hover {
-  color: #ffcc00;
-  text-shadow: 0 0 20px #ff3399, 0 0 50px #ffcc00;
-}
-
-.section-subtitle {
-  font-size: 1.2rem;
-  color: #fff;
-  opacity: 0.85;
-}
-
-/* Advanced service card */
-.advanced-card {
-  background: #111;
-  border: 1px solid rgba(255,255,255,0.1);
-  transition: transform 0.4s, box-shadow 0.4s;
-  cursor: pointer;
-  overflow: hidden;
-}
-.advanced-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 30px #ff3399, 0 0 60px #ffcc00;
-}
-
-/* Service icon */
-.service-icon {
-  font-size: 3rem;
-  color: #ff3399;
-  transition: transform 0.4s, color 0.4s;
-}
-.advanced-card:hover .service-icon {
-  transform: scale(1.4) rotate(15deg);
-  color: #ffcc00;
-}
-
-/* Sparkle animation */
-.icon-wrapper .sparkle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: #fff;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  opacity: 0;
-  pointer-events: none;
-  animation: sparkleAnim 1.5s infinite;
-}
-.icon-wrapper .sparkle:nth-child(1) { animation-delay: 0s; }
-.icon-wrapper .sparkle:nth-child(2) { animation-delay: 0.5s; }
-.icon-wrapper .sparkle:nth-child(3) { animation-delay: 1s; }
-
-@keyframes sparkleAnim {
-  0% { transform: translate(0,0) scale(0); opacity: 1; }
-  50% { transform: translate(calc(-20px + 40px*var(--i)), calc(-20px + 40px*var(--i))) scale(1); opacity: 1; }
-  100% { transform: translate(0,0) scale(0); opacity: 0; }
-}
-
-/* Card titles and text */
-.advanced-card h5 { font-weight: 700; margin: 10px 0; color: #fff; }
-.advanced-card p { color: #ccc; opacity: 0.85; }
-
-
-/* CTA section styling */
-.cta-section {
-  position: relative;
-  background: linear-gradient(135deg, #0a0a0a, #111);
-  overflow: hidden;
-  padding: 100px 0;
-}
-
-.cta-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
+  background: radial-gradient(circle at top, rgba(0,247,255,.15), rgba(0,0,0,.9));
   z-index: 1;
 }
 
-.cta-title {
-  font-size: 3rem;
-  font-weight: 900;
-  color: #ff3399;
-  text-shadow: 0 0 10px #ff3399, 0 0 25px #ff66cc;
-  letter-spacing: 2px;
+.hero-content {
   z-index: 2;
-  transition: transform 0.3s, text-shadow 0.3s;
 }
 
-.cta-title:hover {
-  transform: scale(1.05);
-  text-shadow: 0 0 20px #ff3399, 0 0 50px #ffcc00;
-}
-
-/* Neon button */
-.btn-neon {
-  background: linear-gradient(45deg, #ff3399, #ffcc00);
-  color: #000;
-  font-weight: 700;
-  border-radius: 50px;
-  padding: 12px 40px;
+.hero-title {
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  font-weight: 800;
   text-transform: uppercase;
-  box-shadow: 0 0 15px #ff3399, 0 0 30px #ffcc00;
-  transition: all 0.3s ease;
-  overflow: hidden;
-  position: relative;
+  text-shadow:
+    0 0 20px var(--neon-blue),
+    0 0 60px rgba(0,247,255,.5);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  opacity: .9;
+}
+
+/* =====================
+   NEON BUTTON
+===================== */
+.btn-neon {
+  color: #000;
+  background: var(--neon-blue);
+  border-radius: 50px;
+  padding: 14px 40px;
+  font-weight: 700;
+  box-shadow:
+    0 0 20px var(--neon-blue),
+    0 0 40px rgba(0,247,255,.6);
+  transition: .3s;
 }
 
 .btn-neon:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 30px #ff3399, 0 0 60px #ffcc00;
-  color: #fff;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow:
+    0 0 30px var(--neon-purple),
+    0 0 70px rgba(143,0,255,.6);
 }
 
-/* Sparkle animation */
-.btn-neon .sparkle {
+/* =====================
+   SERVICES SECTION
+===================== */
+.services-section {
+  background: linear-gradient(180deg, #050507, #0b0b12);
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 800;
+}
+
+.neon-text {
+  text-shadow:
+    0 0 12px var(--neon-blue),
+    0 0 40px rgba(0,247,255,.5);
+}
+
+.advanced-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(15px);
+  transition: .4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.advanced-card::before {
+  content: '';
   position: absolute;
-  width: 6px;
-  height: 6px;
-  background: #fff;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(0,247,255,.25), transparent);
   opacity: 0;
-  pointer-events: none;
-  animation: sparkleAnim 1.5s infinite;
+  transition: .4s;
 }
 
-.btn-neon .sparkle:nth-child(1) { animation-delay: 0s; }
-.btn-neon .sparkle:nth-child(2) { animation-delay: 0.5s; }
-.btn-neon .sparkle:nth-child(3) { animation-delay: 1s; }
-
-@keyframes sparkleAnim {
-  0% { transform: translate(0,0) scale(0); opacity: 1; }
-  50% { transform: translate(calc(-50px + 100px*var(--i)), calc(-50px + 100px*var(--i))) scale(1); opacity: 1; }
-  100% { transform: translate(0,0) scale(0); opacity: 0; }
+.advanced-card:hover::before {
+  opacity: 1;
 }
 
-/* Optional canvas for subtle background particles */
-#cta-particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
+.advanced-card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 0 30px rgba(0,247,255,.4),
+    0 0 80px rgba(143,0,255,.3);
 }
 
-/* RESET & GLOBAL */
-*{
-  box-sizing:border-box;
+.service-icon {
+  font-size: 2.8rem;
+  color: var(--neon-blue);
+  margin-bottom: 15px;
 }
 
-html, body{
-  width:100%;
-  overflow-x:hidden;
+/* =====================
+   CTA SECTION
+===================== */
+.cta-section {
+  background: radial-gradient(circle, rgba(143,0,255,.15), #050507);
+  overflow: hidden;
 }
 
-img{
-  max-width:100%;
-  height:auto;
-  display:block;
+.cta-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
 }
 
-/* RESPONSIVE CONTAINER PADDING */
-section{
-  padding:80px 0;
+/* =====================
+   FOOTER
+===================== */
+.footer {
+  background: #020204;
+  padding: 20px 10px;
+  font-size: .9rem;
+  opacity: .7;
 }
 
-@media (max-width: 991px){
-  section{
-    padding:60px 0;
+/* =====================
+   RESPONSIVE BREAKPOINTS
+===================== */
+
+/* 📱 Phones */
+@media (max-width: 576px) {
+  .hero {
+    min-height: 90vh;
+  }
+  .navbar-brand {
+    font-size: 1.1rem;
   }
 }
 
-@media (max-width: 576px){
-  section{
-    padding:45px 0;
+/* 📲 Tablets */
+@media (min-width: 577px) and (max-width: 991px) {
+  .hero-title {
+    font-size: 3.5rem;
   }
 }
 
-/* RESPONSIVE TEXT */
-h1{
-  font-size:clamp(2rem, 5vw, 3.5rem);
-}
-h2{
-  font-size:clamp(1.6rem, 4vw, 2.5rem);
-}
-p{
-  font-size:clamp(0.95rem, 2.5vw, 1.05rem);
-}
-
-img, video{
-  max-width:100%;
-  height:auto;
-}
-
-section{
-  padding:60px 16px;
-}
-
-.container{
-  padding-left:16px;
-  padding-right:16px;
-}
-
-h1{ font-size:1.9rem; }
-h2{ font-size:1.6rem; }
-h3{ font-size:1.3rem; }
-p{ font-size:0.95rem; line-height:1.7; }
-
-.btn{
-  padding:12px 22px;
-  font-size:15px;
-}
-
-@media (max-width: 576px){
-
-  .page-hero{
-    padding:90px 0;
-    text-align:center;
-  }
-
-  .page-hero h1{
-    font-size:2rem;
-  }
-
-  .card,
-  .club-card,
-  .tv-card,
-  .country-card{
-    margin-bottom:20px;
-  }
-
-  .row > div{
-    flex:0 0 100%;
-    max-width:100%;
-  }
-
-  footer p{
-    font-size:14px;
+/* 💻 Laptops */
+@media (min-width: 992px) and (max-width: 1440px) {
+  .container {
+    max-width: 1200px;
   }
 }
 
-@media (max-width: 768px){
-
-  .navbar-brand{
-    font-size:1.3rem;
+/* 📺 Large TVs / 4K */
+@media (min-width: 1920px) {
+  html {
+    font-size: 20px;
   }
-
-  .navbar-nav{
-    text-align:center;
-  }
-
-  .timeline{
-    padding-left:15px;
-  }
-
-  .icon-box{
-    margin-bottom:20px;
-  }
-
-  h1{ font-size:2.2rem; }
-  h2{ font-size:1.8rem; }
-}
-
-@media (max-width: 992px){
-
-  section{
-    padding:80px 20px;
-  }
-
-  .page-hero{
-    padding:120px 0;
-  }
-
-  .club-card img,
-  .tv-card img{
-    height:180px;
-  }
-
-  .container{
-    max-width:960px;
-  }
-}
-
-@media (min-width: 1200px){
-
-  .container{
-    max-width:1180px;
-  }
-
-  section{
-    padding:100px 0;
-  }
-
-  h1{ font-size:3.2rem; }
-  h2{ font-size:2.4rem; }
-}
-@media (prefers-reduced-motion: reduce){
-  *{
-    animation:none !important;
-    transition:none !important;
+  .container {
+    max-width: 1600px;
   }
 }

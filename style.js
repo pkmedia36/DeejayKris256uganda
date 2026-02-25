@@ -86,6 +86,29 @@ window.addEventListener('resize', () => {
   canvas.height = canvas.offsetHeight;
 });
 
+ type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "DeejayKris256ug",
+  "description": "Professional DJ for weddings, clubs, TV shows and corporate events worldwide.",
+  "genre": "DJ / Electronic / Afrobeats / Hip Hop",
+  "url": "https://yourdomain.com",
+  "sameAs": [
+    "https://www.instagram.com/yourprofile",
+    "https://www.facebook.com/yourprofile",
+    "https://www.youtube.com/yourchannel"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+971529605660",
+    "contactType": "Booking"
+  }
+}
+
+
+
+
 
 
 
