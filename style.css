@@ -182,6 +182,33 @@ body {
   margin-bottom: 15px;
 }
 
+.services-section {
+  overflow: hidden; /* contain animations */
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden; /* CONTAINS sparkles & glow */
+  max-width: 100%;
+}
+
+.icon-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Reduce effects on small screens */
+@media (max-width: 576px) {
+  .sparkle {
+    display: none; /* mobile performance + no overflow */
+  }
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 /* =====================
    CTA SECTION
 ===================== */
